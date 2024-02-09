@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+
+/*float kilometerToMile(float kilometers){
+	float CONVERSION = 1.6;
+	float miles = kilometers * CONVERSION;
+	return miles;
+}*/
+
+#define DIFFERENCE 96
+
+int main(int argv, char** argc)
+{	
+	int totalValue; //Decaling the variable we will store the sum og the letter values in 
+	char phrase[128];
+	printf("What is your phrase? "); //Asking the user for a phrase
+    	scanf("%s", phrase);//Want it to be a string so we need to declare a string above and referece the address using a pointer here
+	//printf("HERE");
+	// Now we have assigned the input to phrase
+	//Now we want to create a for loop to loop through the characters in the phrase
+	for (int i = 0; i < strlen(phrase); i++) {
+		//printf("%d",i);
+		int valAscii = (int) phrase[i]; //Want the first step to get the ascii value
+		//printf("%d",valAscii);
+		int val = valAscii - DIFFERENCE; //Shifting so that a =1, b=2 ect
+		totalValue += val;			
+	}
+	
+	printf("%d sumed value \n",totalValue);// Want to print the phrase and its value t the end
+	return 0;
+}
